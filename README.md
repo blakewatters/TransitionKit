@@ -80,8 +80,8 @@ TKEvent *markAsUnread = [TKEvent eventWithName:@"Mark as Unread" transitioningFr
 
 [inboxStateMachine addEventsFromArray:@[ viewMessage, deleteMessage, markAsUnread ]];
 
-// Start the state machine
-[inboxStateMachine start];
+// Activate the state machine
+[inboxStateMachine activate];
 
 [inboxStateMachine isInState:@"Unread"]; // YES, the initial state
 
