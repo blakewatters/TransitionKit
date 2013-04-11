@@ -43,8 +43,8 @@ NSString *const TKStateMachineDidChangeStateEventUserInfoKey = @"event";
 
 NSString *const TKStateMachineIsImmutableException = @"TKStateMachineIsImmutableException";
 
-#define TKRaiseIfStarted() \
-    if ([self isStarted]) [NSException raise:TKStateMachineIsImmutableException format:@"Unable to modify state machine: The state machine has already been started."];
+#define TKRaiseIfActive() \
+    if ([self isActive]) [NSException raise:TKStateMachineIsImmutableException format:@"Unable to modify state machine: The state machine has already been activated."];
 
 static NSString *TKQuoteString(NSString *string)
 {
@@ -54,7 +54,7 @@ static NSString *TKQuoteString(NSString *string)
 @interface TKStateMachine ()
 @property (nonatomic, strong) NSMutableSet *mutableStates;
 @property (nonatomic, strong) NSMutableSet *mutableEvents;
-@property (nonatomic, assign, getter = isStarted) BOOL started;
+@property (nonatomic, assign, getter = isActive) BOOL active;
 @property (nonatomic, strong, readwrite) TKState *currentState;
 @end
 
@@ -89,14 +89,14 @@ static NSString *TKQuoteString(NSString *string)
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@:%p %ld States, %ld Events. currentState=%@, initialState='%@', isStarted=%@>",
+    return [NSString stringWithFormat:@"<%@:%p %ld States, %ld Events. currentState=%@, initialState='%@', isActive=%@>",
             NSStringFromClass([self class]), self, (unsigned long) [self.mutableStates count], (unsigned long) [self.mutableEvents count],
-            TKQuoteString(self.currentState.name), self.initialState.name, self.isStarted ? @"YES" : @"NO"];
+            TKQuoteString(self.currentState.name), self.initialState.name, self.isActive ? @"YES" : @"NO"];
 }
 
 - (void)setInitialState:(TKState *)initialState
 {
-    TKRaiseIfStarted();
+    TKRaiseIfActive();
     _initialState = initialState;
 }
 
@@ -107,15 +107,15 @@ static NSString *TKQuoteString(NSString *string)
 
 - (void)addState:(TKState *)state
 {
-    TKRaiseIfStarted();
+    TKRaiseIfActive();
     if (! [state isKindOfClass:[TKState class]]) [NSException raise:NSInvalidArgumentException format:@"Expected a `TKState` object or `NSString` object specifying the name of a state, instead got a `%@` (%@)", [state class], state];
     if (self.initialState == nil) self.initialState = state;
     [self.mutableStates addObject:state];
 }
 
-- (void)addStatesFromArray:(NSArray *)arrayOfStates
+- (void)addStates:(NSArray *)arrayOfStates
 {
-    TKRaiseIfStarted();
+    TKRaiseIfActive();
     for (TKState *state in arrayOfStates) {
         [self addState:state];
     }
@@ -144,7 +144,7 @@ static NSString *TKQuoteString(NSString *string)
 
 - (void)addEvent:(TKEvent *)event
 {
-    TKRaiseIfStarted();
+    TKRaiseIfActive();
     if (! event) [NSException raise:NSInvalidArgumentException format:@"Cannot add a `nil` event to the state machine."];
     if (event.sourceStates) {
         for (TKState *state in event.sourceStates) {
@@ -157,9 +157,9 @@ static NSString *TKQuoteString(NSString *string)
     [self.mutableEvents addObject:event];
 }
 
-- (void)addEventsFromArray:(NSArray *)arrayOfEvents
+- (void)addEvents:(NSArray *)arrayOfEvents
 {
-    TKRaiseIfStarted();
+    TKRaiseIfActive();
     for (TKEvent *event in arrayOfEvents) {
         [self addEvent:event];
     }
@@ -173,10 +173,10 @@ static NSString *TKQuoteString(NSString *string)
     return nil;
 }
 
-- (void)start
+- (void)activate
 {
-    if (self.isStarted) [NSException raise:NSInternalInconsistencyException format:@"The state machine has already been started."];
-    self.started = YES;
+    if (self.isActive) [NSException raise:NSInternalInconsistencyException format:@"The state machine has already been activated."];
+    self.active = YES;
     
     // Dispatch callbacks to establish initial state
     if (self.initialState.willEnterStateBlock) self.initialState.willEnterStateBlock(self.initialState, self);
@@ -194,7 +194,7 @@ static NSString *TKQuoteString(NSString *string)
 
 - (BOOL)fireEvent:(id)eventOrEventName error:(NSError **)error
 {
-    if (! self.isStarted) [self start];
+    if (! self.isActive) [self activate];
     if (! [eventOrEventName isKindOfClass:[TKEvent class]] && ![eventOrEventName isKindOfClass:[NSString class]]) [NSException raise:NSInvalidArgumentException format:@"Expected a `TKEvent` object or `NSString` object specifying the name of an event, instead got a `%@` (%@)", [eventOrEventName class], eventOrEventName];
     TKEvent *event = [eventOrEventName isKindOfClass:[TKEvent class]] ? eventOrEventName : [self eventNamed:eventOrEventName];
     if (! event) [NSException raise:NSInvalidArgumentException format:@"Cannot find an Event named '%@'", eventOrEventName];
@@ -248,7 +248,7 @@ static NSString *TKQuoteString(NSString *string)
     self.currentState =[aDecoder decodeObjectForKey:@"currentState"];
     self.mutableStates = [[aDecoder decodeObjectForKey:@"states"] mutableCopy];
     self.mutableEvents = [[aDecoder decodeObjectForKey:@"events"] mutableCopy];
-    self.started = [aDecoder decodeBoolForKey:@"isStarted"];
+    self.active = [aDecoder decodeBoolForKey:@"isActive"];
     return self;
 }
 
@@ -258,7 +258,7 @@ static NSString *TKQuoteString(NSString *string)
     [aCoder encodeObject:self.currentState forKey:@"currentState"];
     [aCoder encodeObject:self.states forKey:@"states"];
     [aCoder encodeObject:self.events forKey:@"events"];
-    [aCoder encodeBool:self.isStarted forKey:@"isStarted"];
+    [aCoder encodeBool:self.isActive forKey:@"isActive"];
 }
 
 #pragma mark - NSCopying
@@ -266,7 +266,7 @@ static NSString *TKQuoteString(NSString *string)
 - (id)copyWithZone:(NSZone *)zone
 {
     TKStateMachine *copiedStateMachine = [[[self class] allocWithZone:zone] init];
-    copiedStateMachine.started = NO;
+    copiedStateMachine.active = NO;
     copiedStateMachine.currentState = nil;
     copiedStateMachine.initialState = self.initialState;
     

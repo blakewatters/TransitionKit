@@ -107,7 +107,7 @@ context(@"when initialized", ^{
             singleState = [TKState stateWithName:@"Single"];
             datingState = [TKState stateWithName:@"Dating"];
             event = [TKEvent eventWithName:@"Start Dating" transitioningFromStates:@[ singleState ] toState:datingState];
-            [stateMachine addStatesFromArray:@[ singleState, datingState ]];
+            [stateMachine addStates:@[ singleState, datingState ]];
             [stateMachine addEvent:event];
         });
         
@@ -135,18 +135,18 @@ context(@"when a state machine is copied", ^{
     beforeEach(^{
         firstState = [TKState stateWithName:@"First"];
         secondState = [TKState stateWithName:@"Second"];
-        [stateMachine addStatesFromArray:@[ firstState, secondState ]];
+        [stateMachine addStates:@[ firstState, secondState ]];
         event = [TKEvent eventWithName:@"Event" transitioningFromStates:@[ firstState ] toState:secondState];
         [stateMachine addEvent:event];
         
         stateMachine.initialState = firstState;
-        [stateMachine start];
+        [stateMachine activate];
         
         copiedStateMachine = [stateMachine copy];
     });
     
-    it(@"is not started", ^{
-        [[@(copiedStateMachine.isStarted) should] beNo];
+    it(@"is not active", ^{
+        [[@(copiedStateMachine.isActive) should] beNo];
     });
     
     it(@"copies all states", ^{
@@ -176,7 +176,7 @@ describe(@"setting the initial state", ^{
     beforeEach(^{
         TKState *single = [TKState stateWithName:@"Single"];
         TKState *dating = [TKState stateWithName:@"Dating"];
-        [stateMachine addStatesFromArray:@[ single, dating ]];
+        [stateMachine addStates:@[ single, dating ]];
         [stateMachine addEvent:[TKEvent eventWithName:@"Break Up" transitioningFromStates:@[ dating ] toState:single]];
     });
     
@@ -196,7 +196,7 @@ describe(@"setting the initial state", ^{
         
         context(@"and then is started", ^{
             it(@"changes the current state to the initial state", ^{
-                [stateMachine start];
+                [stateMachine activate];
                 [[stateMachine.currentState.name should] equal:@"Dating"];
             });
         });
@@ -208,7 +208,7 @@ describe(@"setting the initial state", ^{
             [stateMachine fireEvent:@"Break Up" error:nil];
             [[theBlock(^{
                 stateMachine.initialState = [stateMachine stateNamed:@"Married"];
-            }) should] raiseWithName:TKStateMachineIsImmutableException reason:@"Unable to modify state machine: The state machine has already been started."];
+            }) should] raiseWithName:TKStateMachineIsImmutableException reason:@"Unable to modify state machine: The state machine has already been activated."];
         });
     });
 });
@@ -270,7 +270,7 @@ describe(@"A State Machine Modeling Dating", ^{
             person.happy = NO;
         }];
         marriedState = [TKState stateWithName:@"Married"];
-        [stateMachine addStatesFromArray:@[ singleState, datingState, marriedState ]];
+        [stateMachine addStates:@[ singleState, datingState, marriedState ]];
         
         startDating = [TKEvent eventWithName:@"Start Dating" transitioningFromStates:@[ singleState ] toState:datingState];
         [startDating setDidFireEventBlock:^(TKEvent *event, TKStateMachine *stateMachine) {
@@ -295,13 +295,13 @@ describe(@"A State Machine Modeling Dating", ^{
             [person startTryingToPickUpCollegeGirls];
         }];
         
-        [stateMachine addEventsFromArray:@[ startDating, breakup, getMarried, divorce ]];
+        [stateMachine addEvents:@[ startDating, breakup, getMarried, divorce ]];
     });
     
     context(@"when a Single Person Starts Dating", ^{
         beforeEach(^{
             stateMachine.initialState = [stateMachine stateNamed:@"Single"];
-            [stateMachine start];
+            [stateMachine activate];
         });
         
         it(@"transitions to the Dating state", ^{
@@ -381,7 +381,7 @@ describe(@"A State Machine Modeling Dating", ^{
     context(@"when a Married Person Divorces", ^{
         beforeEach(^{
             stateMachine.initialState = [stateMachine stateNamed:@"Married"];
-            [stateMachine start];
+            [stateMachine activate];
         });
         
         context(@"but is unwilling to give up half of everything", ^{

@@ -28,7 +28,7 @@
  
  ## Callback Sequence
  
- When a state machine is started, the following callbacks are invoked:
+ When a state machine is activated, the following callbacks are invoked:
  
  1. Initial State: willEnterState - The block set with `setWillEnterStateBlock:` on the `initialState` is invoked.
  1. The `initialState` changes from `nil` to `self.initialState`
@@ -48,7 +48,7 @@
  
  ## Copying and Serialization Support
  
- The `TKStateMachine` class is both `NSCoding` and `NSCopying` compliant. When copied, a new unstarted state machine instance is created with the same states, events, and initial state. All blocks associated with the events and states are copied. When archived, the current state, initial state, states, events and started state is preserved. All block callbacks associated with the states and events become `nil`.
+ The `TKStateMachine` class is both `NSCoding` and `NSCopying` compliant. When copied, a new inactive state machine instance is created with the same states, events, and initial state. All blocks associated with the events and states are copied. When archived, the current state, initial state, states, events and activation state is preserved. All block callbacks associated with the states and events become `nil`.
  */
 @interface TKStateMachine : NSObject <NSCoding, NSCopying>
 
@@ -64,14 +64,14 @@
 /**
  The initial state of the receiver.
  
- When the machine is first started, it transitions into the initial state.
+ When the machine is activated, it transitions into the initial state.
  */
 @property (nonatomic, strong) TKState *initialState;
 
 /**
  The current state of the receiver.
  
- When the machine is first started, the current state transitions from `nil` to the `initialState`. Subsequent state transitions are trigger by the firing of events.
+ When the machine is activated, the current state transitions from `nil` to the `initialState`. Subsequent state transitions are trigger by the firing of events.
  
  @see `fireEvent:error:`
  */
@@ -83,7 +83,7 @@
  Before a state can be used in an event, it must be registered with the state machine.
  
  @param state The state to be added.
- @raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been started.
+ @raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been activated.
  */
 - (void)addState:(TKState *)state;
 
@@ -98,7 +98,7 @@
  
  @param arrayOfStates An array of `TKState` objets to be added to the receiver.
  */
-- (void)addStatesFromArray:(NSArray *)arrayOfStates;
+- (void)addStates:(NSArray *)arrayOfStates;
 
 /**
  Retrieves the state with the given name from the receiver.
@@ -135,7 +135,7 @@
  The state objects references by the event must be registered with the receiver.
  
  @param event The event to be added.
- @raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been started.
+ @raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been activated.
  @raises NSInternalInconsistencyException Raised if the given event references a `TKState` that has not been registered with the receiver.
  */
 - (void)addEvent:(TKEvent *)event;
@@ -151,7 +151,7 @@
  
  @param arrayOfEvents An array of `TKEvent` objets to be added to the receiver.
  */
-- (void)addEventsFromArray:(NSArray *)arrayOfEvents;
+- (void)addEvents:(NSArray *)arrayOfEvents;
 
 /**
  Retrieves the event with the given name from the receiver.
@@ -162,20 +162,20 @@
 - (TKEvent *)eventNamed:(NSString *)name;
 
 ///---------------------------------
-/// @name Starting the State Machine
+/// @name Activating the State Machine
 ///---------------------------------
 
 /**
- Starts the receiver by making it immutable and transitioning into the initial state.
+ Activates the receiver by making it immutable and transitioning into the initial state.
  
- Once the state machine has been started no further changes can be made to the registered events and states.
+ Once the state machine has been activated no further changes can be made to the registered events and states.
  */
-- (void)start;
+- (void)activate;
 
 /**
- Returns a Boolean value that indicates if the receiver has been started.
+ Returns a Boolean value that indicates if the receiver has been activated.
  */
-- (BOOL)isStarted;
+- (BOOL)isActive;
 
 ///--------------------
 /// @name Firing Events
@@ -192,7 +192,7 @@
 /**
  Fires an event to transition the state of the receiver. If the event fails to fire, then `NO` is returned and an error is set.
  
- If the receiver has not yet been started, then the first event fired will start it. If the specified transition is not permitted, then `NO` will be returned and an `TKInvalidTransitionError` will be created. If the `shouldFireEventBlock` of the specified event returns `NO`, then the event is declined, `NO` will be returned, and an `TKTransitionDeclinedError` will be created.
+ If the receiver has not yet been activated, then the first event fired will activate it. If the specified transition is not permitted, then `NO` will be returned and an `TKInvalidTransitionError` will be created. If the `shouldFireEventBlock` of the specified event returns `NO`, then the event is declined, `NO` will be returned, and an `TKTransitionDeclinedError` will be created.
  
  @param eventOrEventName A `TKEvent` object or an `NSString` object that identifies an event by name.
  @param error A pointer to an `NSError` object that will be set if the event fails to fire.
