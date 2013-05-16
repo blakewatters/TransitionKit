@@ -1,6 +1,8 @@
 TransitionKit
 =============
 
+[![Build Status](https://travis-ci.org/blakewatters/TransitionKit.png?branch=master,development)](https://travis-ci.org/blakewatters/TransitionKit)
+
 **A simple, elegantly designed block based API for implementing State Machines in Objective-C**
 
 TransitionKit is a small Cocoa library that provides an API for implementing a state machine in Objective C. It is full-featured, completely documented, and very thoroughly unit tested. State machines are a great way to manage complexity in your application and TransitionKit provides you with a great way to take advantage of a state machine in your next iOS or Mac OS X application.
