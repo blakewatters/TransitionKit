@@ -7,67 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		252C45DC16F681D400CF1FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45DB16F681D400CF1FEA /* Foundation.framework */; };
 		252C45EB16F681D500CF1FEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EA16F681D500CF1FEA /* SenTestingKit.framework */; };
 		252C45ED16F681D500CF1FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EC16F681D500CF1FEA /* UIKit.framework */; };
 		252C45EE16F681D500CF1FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45DB16F681D400CF1FEA /* Foundation.framework */; };
-		252C45F116F681D500CF1FEA /* libTransitionKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45D816F681D400CF1FEA /* libTransitionKit.a */; };
 		252C460E16F6835900CF1FEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 252C460916F6835900CF1FEA /* InfoPlist.strings */; };
-		252C461816F6849A00CF1FEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C461716F6849A00CF1FEA /* Cocoa.framework */; };
 		252C462D16F6849A00CF1FEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EA16F681D500CF1FEA /* SenTestingKit.framework */; };
 		252C462E16F6849A00CF1FEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C461716F6849A00CF1FEA /* Cocoa.framework */; };
-		252C463116F6849A00CF1FEA /* TransitionKitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C461616F6849A00CF1FEA /* TransitionKitFramework.framework */; };
-		252C464316F6A4B500CF1FEA /* TKStateMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 252C464116F6A4B500CF1FEA /* TKStateMachine.h */; };
-		252C464416F6A4B500CF1FEA /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464216F6A4B500CF1FEA /* TKStateMachine.m */; };
-		252C464516F6A4B500CF1FEA /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464216F6A4B500CF1FEA /* TKStateMachine.m */; };
-		252C464816F6A4C200CF1FEA /* TKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 252C464616F6A4C200CF1FEA /* TKEvent.h */; };
-		252C464916F6A4C200CF1FEA /* TKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464716F6A4C200CF1FEA /* TKEvent.m */; };
-		252C464A16F6A4C200CF1FEA /* TKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464716F6A4C200CF1FEA /* TKEvent.m */; };
-		252C464D16F6A4DF00CF1FEA /* TKState.h in Headers */ = {isa = PBXBuildFile; fileRef = 252C464B16F6A4DF00CF1FEA /* TKState.h */; };
-		252C464E16F6A4DF00CF1FEA /* TKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464C16F6A4DF00CF1FEA /* TKState.m */; };
-		252C464F16F6A4DF00CF1FEA /* TKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464C16F6A4DF00CF1FEA /* TKState.m */; };
 		252C465216F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465116F6A57700CF1FEA /* TKStateMachineSpec.m */; };
 		252C465316F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465116F6A57700CF1FEA /* TKStateMachineSpec.m */; };
 		252C465616F6A58700CF1FEA /* TKEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465516F6A58700CF1FEA /* TKEventSpec.m */; };
 		252C465716F6A58700CF1FEA /* TKEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465516F6A58700CF1FEA /* TKEventSpec.m */; };
 		252C465A16F6A59500CF1FEA /* TKStateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465916F6A59500CF1FEA /* TKStateSpec.m */; };
 		252C465B16F6A59500CF1FEA /* TKStateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465916F6A59500CF1FEA /* TKStateSpec.m */; };
-		252C465D16F6A79100CF1FEA /* TransitionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 252C465C16F6A79100CF1FEA /* TransitionKit.h */; };
+		2580156117457E1B0026AA6E /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464216F6A4B500CF1FEA /* TKStateMachine.m */; };
+		2580156217457E1B0026AA6E /* TKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464716F6A4C200CF1FEA /* TKEvent.m */; };
+		2580156317457E1B0026AA6E /* TKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464C16F6A4DF00CF1FEA /* TKState.m */; };
+		2580156417457E240026AA6E /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464216F6A4B500CF1FEA /* TKStateMachine.m */; };
+		2580156517457E240026AA6E /* TKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464716F6A4C200CF1FEA /* TKEvent.m */; };
+		2580156617457E240026AA6E /* TKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464C16F6A4DF00CF1FEA /* TKState.m */; };
 		42AE467DF3384AE6834629CA /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96E76A4064B44C8AECE57E9 /* libPods-osx.a */; };
 		C6BB373401CC4FC1BB5659DC /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A48E628DDE45B98F10DBA5 /* libPods-ios.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		252C45EF16F681D500CF1FEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 252C45D016F681D400CF1FEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 252C45D716F681D400CF1FEA;
-			remoteInfo = TransitionKit;
-		};
-		252C462F16F6849A00CF1FEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 252C45D016F681D400CF1FEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 252C461516F6849A00CF1FEA;
-			remoteInfo = TransitionKitFramework;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		252C45D616F681D400CF1FEA /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		252C45D816F681D400CF1FEA /* libTransitionKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTransitionKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		252C45DB16F681D400CF1FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		252C45E916F681D500CF1FEA /* TransitionKitSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionKitSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		252C45EA16F681D500CF1FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -75,12 +37,11 @@
 		252C460416F6833D00CF1FEA /* TransitionKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TransitionKit-Prefix.pch"; sourceTree = "<group>"; };
 		252C460A16F6835900CF1FEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		252C460B16F6835900CF1FEA /* TransitionKitTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TransitionKitTests-Info.plist"; sourceTree = "<group>"; };
-		252C461616F6849A00CF1FEA /* TransitionKitFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TransitionKitFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		252C461716F6849A00CF1FEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		252C461A16F6849A00CF1FEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		252C461B16F6849A00CF1FEA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		252C461C16F6849A00CF1FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		252C462C16F6849A00CF1FEA /* TransitionKitFrameworkSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionKitFrameworkSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		252C462C16F6849A00CF1FEA /* OS X Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OS X Specs.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		252C464116F6A4B500CF1FEA /* TKStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStateMachine.h; sourceTree = "<group>"; };
 		252C464216F6A4B500CF1FEA /* TKStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStateMachine.m; sourceTree = "<group>"; };
 		252C464616F6A4C200CF1FEA /* TKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEvent.h; sourceTree = "<group>"; };
@@ -98,14 +59,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		252C45D516F681D400CF1FEA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				252C45DC16F681D400CF1FEA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		252C45E516F681D500CF1FEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,16 +66,7 @@
 				252C45EB16F681D500CF1FEA /* SenTestingKit.framework in Frameworks */,
 				252C45ED16F681D500CF1FEA /* UIKit.framework in Frameworks */,
 				252C45EE16F681D500CF1FEA /* Foundation.framework in Frameworks */,
-				252C45F116F681D500CF1FEA /* libTransitionKit.a in Frameworks */,
 				C6BB373401CC4FC1BB5659DC /* libPods-ios.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		252C461216F6849A00CF1FEA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				252C461816F6849A00CF1FEA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +76,6 @@
 			files = (
 				252C462D16F6849A00CF1FEA /* SenTestingKit.framework in Frameworks */,
 				252C462E16F6849A00CF1FEA /* Cocoa.framework in Frameworks */,
-				252C463116F6849A00CF1FEA /* TransitionKitFramework.framework in Frameworks */,
 				42AE467DF3384AE6834629CA /* libPods-osx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,10 +98,8 @@
 		252C45D916F681D400CF1FEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				252C45D816F681D400CF1FEA /* libTransitionKit.a */,
 				252C45E916F681D500CF1FEA /* TransitionKitSpecs.octest */,
-				252C461616F6849A00CF1FEA /* TransitionKitFramework.framework */,
-				252C462C16F6849A00CF1FEA /* TransitionKitFrameworkSpecs.octest */,
+				252C462C16F6849A00CF1FEA /* OS X Specs.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,41 +157,10 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		252C461316F6849A00CF1FEA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				252C464316F6A4B500CF1FEA /* TKStateMachine.h in Headers */,
-				252C464816F6A4C200CF1FEA /* TKEvent.h in Headers */,
-				252C464D16F6A4DF00CF1FEA /* TKState.h in Headers */,
-				252C465D16F6A79100CF1FEA /* TransitionKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		252C45D716F681D400CF1FEA /* TransitionKit */ = {
+		252C45E816F681D500CF1FEA /* iOS Specs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 252C45FD16F681D500CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKit" */;
-			buildPhases = (
-				252C45D416F681D400CF1FEA /* Sources */,
-				252C45D516F681D400CF1FEA /* Frameworks */,
-				252C45D616F681D400CF1FEA /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TransitionKit;
-			productName = TransitionKit;
-			productReference = 252C45D816F681D400CF1FEA /* libTransitionKit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		252C45E816F681D500CF1FEA /* TransitionKitSpecs */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 252C460016F681D500CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKitSpecs" */;
+			buildConfigurationList = 252C460016F681D500CF1FEA /* Build configuration list for PBXNativeTarget "iOS Specs" */;
 			buildPhases = (
 				252C45E416F681D500CF1FEA /* Sources */,
 				252C45E516F681D500CF1FEA /* Frameworks */,
@@ -261,34 +171,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				252C45F016F681D500CF1FEA /* PBXTargetDependency */,
 			);
-			name = TransitionKitSpecs;
+			name = "iOS Specs";
 			productName = TransitionKitTests;
 			productReference = 252C45E916F681D500CF1FEA /* TransitionKitSpecs.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		252C461516F6849A00CF1FEA /* TransitionKitFramework */ = {
+		252C462B16F6849A00CF1FEA /* OS X Specs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 252C463B16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKitFramework" */;
-			buildPhases = (
-				252C461116F6849A00CF1FEA /* Sources */,
-				252C461216F6849A00CF1FEA /* Frameworks */,
-				252C461316F6849A00CF1FEA /* Headers */,
-				252C461416F6849A00CF1FEA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TransitionKitFramework;
-			productName = TransitionKitFramework;
-			productReference = 252C461616F6849A00CF1FEA /* TransitionKitFramework.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		252C462B16F6849A00CF1FEA /* TransitionKitFrameworkSpecs */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 252C463E16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKitFrameworkSpecs" */;
+			buildConfigurationList = 252C463E16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "OS X Specs" */;
 			buildPhases = (
 				252C462716F6849A00CF1FEA /* Sources */,
 				252C462816F6849A00CF1FEA /* Frameworks */,
@@ -299,11 +190,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				252C463016F6849A00CF1FEA /* PBXTargetDependency */,
 			);
-			name = TransitionKitFrameworkSpecs;
+			name = "OS X Specs";
 			productName = TransitionKitFrameworkTests;
-			productReference = 252C462C16F6849A00CF1FEA /* TransitionKitFrameworkSpecs.octest */;
+			productReference = 252C462C16F6849A00CF1FEA /* OS X Specs.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -326,10 +216,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				252C45D716F681D400CF1FEA /* TransitionKit */,
-				252C45E816F681D500CF1FEA /* TransitionKitSpecs */,
-				252C461516F6849A00CF1FEA /* TransitionKitFramework */,
-				252C462B16F6849A00CF1FEA /* TransitionKitFrameworkSpecs */,
+				252C45E816F681D500CF1FEA /* iOS Specs */,
+				252C462B16F6849A00CF1FEA /* OS X Specs */,
 			);
 		};
 /* End PBXProject section */
@@ -340,13 +228,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				252C460E16F6835900CF1FEA /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		252C461416F6849A00CF1FEA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,33 +298,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		252C45D416F681D400CF1FEA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				252C464416F6A4B500CF1FEA /* TKStateMachine.m in Sources */,
-				252C464916F6A4C200CF1FEA /* TKEvent.m in Sources */,
-				252C464E16F6A4DF00CF1FEA /* TKState.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		252C45E416F681D500CF1FEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2580156117457E1B0026AA6E /* TKStateMachine.m in Sources */,
+				2580156217457E1B0026AA6E /* TKEvent.m in Sources */,
+				2580156317457E1B0026AA6E /* TKState.m in Sources */,
 				252C465216F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */,
 				252C465616F6A58700CF1FEA /* TKEventSpec.m in Sources */,
 				252C465A16F6A59500CF1FEA /* TKStateSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		252C461116F6849A00CF1FEA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				252C464516F6A4B500CF1FEA /* TKStateMachine.m in Sources */,
-				252C464A16F6A4C200CF1FEA /* TKEvent.m in Sources */,
-				252C464F16F6A4DF00CF1FEA /* TKState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2580156417457E240026AA6E /* TKStateMachine.m in Sources */,
+				2580156517457E240026AA6E /* TKEvent.m in Sources */,
+				2580156617457E240026AA6E /* TKState.m in Sources */,
 				252C465316F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */,
 				252C465716F6A58700CF1FEA /* TKEventSpec.m in Sources */,
 				252C465B16F6A59500CF1FEA /* TKStateSpec.m in Sources */,
@@ -458,19 +325,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		252C45F016F681D500CF1FEA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 252C45D716F681D400CF1FEA /* TransitionKit */;
-			targetProxy = 252C45EF16F681D500CF1FEA /* PBXContainerItemProxy */;
-		};
-		252C463016F6849A00CF1FEA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 252C461516F6849A00CF1FEA /* TransitionKitFramework */;
-			targetProxy = 252C462F16F6849A00CF1FEA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		252C460916F6835900CF1FEA /* InfoPlist.strings */ = {
@@ -537,30 +391,6 @@
 			};
 			name = Release;
 		};
-		252C45FE16F681D500CF1FEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/TransitionKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		252C45FF16F681D500CF1FEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/TransitionKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		252C460116F681D500CF1FEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */;
@@ -595,55 +425,6 @@
 			};
 			name = Release;
 		};
-		252C463C16F6849A00CF1FEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "TransitionKitFramework/TransitionKitFramework-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Debug;
-		};
-		252C463D16F6849A00CF1FEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "TransitionKitFramework/TransitionKitFramework-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
 		252C463F16F6849A00CF1FEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E692EE6FFE544353AB3E3A1D /* Pods-osx.xcconfig */;
@@ -658,7 +439,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "TransitionKitFrameworkTests/TransitionKitFrameworkTests-Info.plist";
+				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -681,7 +462,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "TransitionKitFrameworkTests/TransitionKitFrameworkTests-Info.plist";
+				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -701,16 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		252C45FD16F681D500CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				252C45FE16F681D500CF1FEA /* Debug */,
-				252C45FF16F681D500CF1FEA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		252C460016F681D500CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKitSpecs" */ = {
+		252C460016F681D500CF1FEA /* Build configuration list for PBXNativeTarget "iOS Specs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				252C460116F681D500CF1FEA /* Debug */,
@@ -719,16 +491,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		252C463B16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKitFramework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				252C463C16F6849A00CF1FEA /* Debug */,
-				252C463D16F6849A00CF1FEA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		252C463E16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "TransitionKitFrameworkSpecs" */ = {
+		252C463E16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "OS X Specs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				252C463F16F6849A00CF1FEA /* Debug */,
