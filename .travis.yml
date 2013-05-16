@@ -2,5 +2,5 @@ language: objective-c
 before_install:
     - brew update
     - brew install xctool --HEAD
-    - mkdir -p TransitionKit.xcodeproj/xcshareddata/xcschemes && cp Tests/Schemes/*.xcscheme TransitionKit.xcodeproj/xcshareddata/xcschemes/
+    - mkdir -p TransitionKit.xcodeproj/xcshareddata/xcschemes && cp Specs/Schemes/*.xcscheme TransitionKit.xcodeproj/xcshareddata/xcschemes/
 script: rake spec
