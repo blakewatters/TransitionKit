@@ -62,10 +62,10 @@ TKState *unread = [TKState stateWithName:@"Unread"];
 [unread setDidEnterStateBlock:^(TKState *state, TKStateMachine *stateMachine) {
     [self incrementUnreadCount];
 }];
+TKState *read = [TKState stateWithName:@"Read"];
 [read setDidExitStateBlock:^(TKState *state, TKStateMachine *stateMachine) {
     [self decrementUnreadCount];
 }];
-TKState *read = [TKState stateWithName:@"Read"];
 TKState *deleted = [TKState stateWithName:@"Deleted"];
 [deleted setDidEnterStateBlock:^(TKState *state, TKStateMachine *stateMachine) {
     [self moveMessageToTrash];
