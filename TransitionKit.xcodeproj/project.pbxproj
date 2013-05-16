@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		252C45DB16F681D400CF1FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		252C45E916F681D500CF1FEA /* TransitionKitSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionKitSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		252C45E916F681D500CF1FEA /* iOS Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Specs.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		252C45EA16F681D500CF1FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		252C45EC16F681D500CF1FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		252C460416F6833D00CF1FEA /* TransitionKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TransitionKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		252C45D916F681D400CF1FEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				252C45E916F681D500CF1FEA /* TransitionKitSpecs.octest */,
+				252C45E916F681D500CF1FEA /* iOS Specs.octest */,
 				252C462C16F6849A00CF1FEA /* OS X Specs.octest */,
 			);
 			name = Products;
@@ -174,7 +174,7 @@
 			);
 			name = "iOS Specs";
 			productName = TransitionKitTests;
-			productReference = 252C45E916F681D500CF1FEA /* TransitionKitSpecs.octest */;
+			productReference = 252C45E916F681D500CF1FEA /* iOS Specs.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		252C462B16F6849A00CF1FEA /* OS X Specs */ = {
