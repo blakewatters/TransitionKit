@@ -224,8 +224,8 @@ static NSString *TKQuoteString(NSString *string)
     if (oldState.willExitStateBlock) oldState.willExitStateBlock(oldState, self);
     if (newState.willEnterStateBlock) newState.willEnterStateBlock(newState, self);
     self.currentState = newState;
-    if (newState.didEnterStateBlock) newState.didEnterStateBlock(newState, self);
     if (oldState.didExitStateBlock) oldState.didExitStateBlock(oldState, self);
+    if (newState.didEnterStateBlock) newState.didEnterStateBlock(newState, self);
     
     if (event.didFireEventBlock) event.didFireEventBlock(event, self);
     
