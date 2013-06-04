@@ -1,5 +1,5 @@
 def build_and_run_tests(command, sdk_name)
-  %w{build-tests test}.each do |action|
+  %w{build build-tests test}.each do |action|
     sdk = (action == 'test') ? "-test-sdk #{sdk_name}" : "-sdk #{sdk_name}"
     cmd = command % { action: action, sdk: sdk }
     puts "Executing `#{cmd}`..."
