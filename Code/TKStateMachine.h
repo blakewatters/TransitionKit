@@ -41,8 +41,8 @@
  1. Old State: willExitState - The block set with `setWillExitStateBlock:` on the outgoing state is invoked.
  1. New State: willEnterState - The block set with `setWillEnterStateBlock:` on the incoming state is invoked.
  1. The `currentState` changes from the old state to the new state.
- 1. New State: didEnterState - The block set with `setDidEnterStateBlock:` on the new current state is invoked.
  1. Old State: didExitState - The block set with `setDidExitStateBlock:` on the old state is invoked.
+ 1. New State: didEnterState - The block set with `setDidEnterStateBlock:` on the new current state is invoked.
  1. Event: didFireEvent - The block set with `setDidFireEventBlock:` on the event being fired is invoked.
  1. Notification: After the event has completed and all block callbacks 
  
