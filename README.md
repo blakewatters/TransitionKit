@@ -75,7 +75,7 @@ TKState *deleted = [TKState stateWithName:@"Deleted"];
     [self moveMessageToTrash];
 }];
 
-[inboxStateMachine addStatesFromArry:@[ unread, read, deleted ]];
+[inboxStateMachine addStatesFromArray:@[ unread, read, deleted ]];
 inboxStateMachine.initialState = unread;
 
 TKEvent *viewMessage = [TKEvent eventWithName:@"View Message" transitioningFromStates:@[ unread ] toState:read];
