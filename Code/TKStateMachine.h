@@ -160,9 +160,9 @@
  */
 - (TKEvent *)eventNamed:(NSString *)name;
 
-///---------------------------------
+///-----------------------------------
 /// @name Activating the State Machine
-///---------------------------------
+///-----------------------------------
 
 /**
  Activates the receiver by making it immutable and transitioning into the initial state.
