@@ -7,31 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		252C45EB16F681D500CF1FEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EA16F681D500CF1FEA /* SenTestingKit.framework */; };
-		252C45ED16F681D500CF1FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EC16F681D500CF1FEA /* UIKit.framework */; };
-		252C45EE16F681D500CF1FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45DB16F681D400CF1FEA /* Foundation.framework */; };
-		252C460E16F6835900CF1FEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 252C460916F6835900CF1FEA /* InfoPlist.strings */; };
 		252C462D16F6849A00CF1FEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EA16F681D500CF1FEA /* SenTestingKit.framework */; };
 		252C462E16F6849A00CF1FEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C461716F6849A00CF1FEA /* Cocoa.framework */; };
-		252C465216F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465116F6A57700CF1FEA /* TKStateMachineSpec.m */; };
 		252C465316F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465116F6A57700CF1FEA /* TKStateMachineSpec.m */; };
-		252C465616F6A58700CF1FEA /* TKEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465516F6A58700CF1FEA /* TKEventSpec.m */; };
 		252C465716F6A58700CF1FEA /* TKEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465516F6A58700CF1FEA /* TKEventSpec.m */; };
-		252C465A16F6A59500CF1FEA /* TKStateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465916F6A59500CF1FEA /* TKStateSpec.m */; };
 		252C465B16F6A59500CF1FEA /* TKStateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465916F6A59500CF1FEA /* TKStateSpec.m */; };
-		2580156117457E1B0026AA6E /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464216F6A4B500CF1FEA /* TKStateMachine.m */; };
-		2580156217457E1B0026AA6E /* TKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464716F6A4C200CF1FEA /* TKEvent.m */; };
-		2580156317457E1B0026AA6E /* TKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464C16F6A4DF00CF1FEA /* TKState.m */; };
-		2580156417457E240026AA6E /* TKStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464216F6A4B500CF1FEA /* TKStateMachine.m */; };
-		2580156517457E240026AA6E /* TKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464716F6A4C200CF1FEA /* TKEvent.m */; };
-		2580156617457E240026AA6E /* TKState.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C464C16F6A4DF00CF1FEA /* TKState.m */; };
+		25AE19B61809A70E00AF5535 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EA16F681D500CF1FEA /* SenTestingKit.framework */; };
+		25AE19B71809A70E00AF5535 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45DB16F681D400CF1FEA /* Foundation.framework */; };
+		25AE19B81809A70E00AF5535 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EC16F681D500CF1FEA /* UIKit.framework */; };
+		25AE19C51809A72400AF5535 /* TKStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465116F6A57700CF1FEA /* TKStateMachineSpec.m */; };
+		25AE19C61809A72400AF5535 /* TKEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465516F6A58700CF1FEA /* TKEventSpec.m */; };
+		25AE19C71809A72400AF5535 /* TKStateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465916F6A59500CF1FEA /* TKStateSpec.m */; };
+		2F4EC36CAD4D4CB08D744BB4 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A48E628DDE45B98F10DBA5 /* libPods-ios.a */; };
 		42AE467DF3384AE6834629CA /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96E76A4064B44C8AECE57E9 /* libPods-osx.a */; };
-		C6BB373401CC4FC1BB5659DC /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A48E628DDE45B98F10DBA5 /* libPods-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		252C45DB16F681D400CF1FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		252C45E916F681D500CF1FEA /* iOS Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Specs.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		252C45EA16F681D500CF1FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		252C45EC16F681D500CF1FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		252C460416F6833D00CF1FEA /* TransitionKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TransitionKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -52,6 +44,9 @@
 		252C465516F6A58700CF1FEA /* TKEventSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEventSpec.m; sourceTree = "<group>"; };
 		252C465916F6A59500CF1FEA /* TKStateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStateSpec.m; sourceTree = "<group>"; };
 		252C465C16F6A79100CF1FEA /* TransitionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionKit.h; sourceTree = "<group>"; };
+		25AE19B51809A70E00AF5535 /* iOS Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Specs.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25B01F9A1808941D007488E1 /* TKTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTransition.h; sourceTree = "<group>"; };
+		25B01F9B1808941D007488E1 /* TKTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTransition.m; sourceTree = "<group>"; };
 		32A48E628DDE45B98F10DBA5 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.xcconfig"; path = "Pods/Pods-ios.xcconfig"; sourceTree = SOURCE_ROOT; };
 		C96E76A4064B44C8AECE57E9 /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,17 +54,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		252C45E516F681D500CF1FEA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				252C45EB16F681D500CF1FEA /* SenTestingKit.framework in Frameworks */,
-				252C45ED16F681D500CF1FEA /* UIKit.framework in Frameworks */,
-				252C45EE16F681D500CF1FEA /* Foundation.framework in Frameworks */,
-				C6BB373401CC4FC1BB5659DC /* libPods-ios.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		252C462816F6849A00CF1FEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,6 +61,17 @@
 				252C462D16F6849A00CF1FEA /* SenTestingKit.framework in Frameworks */,
 				252C462E16F6849A00CF1FEA /* Cocoa.framework in Frameworks */,
 				42AE467DF3384AE6834629CA /* libPods-osx.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25AE19B21809A70E00AF5535 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25AE19B61809A70E00AF5535 /* SenTestingKit.framework in Frameworks */,
+				25AE19B81809A70E00AF5535 /* UIKit.framework in Frameworks */,
+				25AE19B71809A70E00AF5535 /* Foundation.framework in Frameworks */,
+				2F4EC36CAD4D4CB08D744BB4 /* libPods-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +93,8 @@
 		252C45D916F681D400CF1FEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				252C45E916F681D500CF1FEA /* iOS Specs.octest */,
 				252C462C16F6849A00CF1FEA /* OS X Specs.octest */,
+				25AE19B51809A70E00AF5535 /* iOS Specs.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +123,8 @@
 				252C464716F6A4C200CF1FEA /* TKEvent.m */,
 				252C464B16F6A4DF00CF1FEA /* TKState.h */,
 				252C464C16F6A4DF00CF1FEA /* TKState.m */,
+				25B01F9A1808941D007488E1 /* TKTransition.h */,
+				25B01F9B1808941D007488E1 /* TKTransition.m */,
 				252C465C16F6A79100CF1FEA /* TransitionKit.h */,
 			);
 			path = Code;
@@ -158,25 +155,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		252C45E816F681D500CF1FEA /* iOS Specs */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 252C460016F681D500CF1FEA /* Build configuration list for PBXNativeTarget "iOS Specs" */;
-			buildPhases = (
-				252C45E416F681D500CF1FEA /* Sources */,
-				252C45E516F681D500CF1FEA /* Frameworks */,
-				252C45E616F681D500CF1FEA /* Resources */,
-				252C45E716F681D500CF1FEA /* ShellScript */,
-				EA7B409C42F84B02982565CA /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "iOS Specs";
-			productName = TransitionKitTests;
-			productReference = 252C45E916F681D500CF1FEA /* iOS Specs.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 		252C462B16F6849A00CF1FEA /* OS X Specs */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 252C463E16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "OS X Specs" */;
@@ -194,6 +172,25 @@
 			name = "OS X Specs";
 			productName = TransitionKitFrameworkTests;
 			productReference = 252C462C16F6849A00CF1FEA /* OS X Specs.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		25AE19B41809A70E00AF5535 /* iOS Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25AE19C21809A70E00AF5535 /* Build configuration list for PBXNativeTarget "iOS Specs" */;
+			buildPhases = (
+				FB4F6E92C45C44DF8B42F3A3 /* Check Pods Manifest.lock */,
+				25AE19B11809A70E00AF5535 /* Sources */,
+				25AE19B21809A70E00AF5535 /* Frameworks */,
+				25AE19B31809A70E00AF5535 /* Resources */,
+				8E44984BB1724F918488E8F7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS Specs";
+			productName = "iOS Specs";
+			productReference = 25AE19B51809A70E00AF5535 /* iOS Specs.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -216,22 +213,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				252C45E816F681D500CF1FEA /* iOS Specs */,
 				252C462B16F6849A00CF1FEA /* OS X Specs */,
+				25AE19B41809A70E00AF5535 /* iOS Specs */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		252C45E616F681D500CF1FEA /* Resources */ = {
+		252C462916F6849A00CF1FEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				252C460E16F6835900CF1FEA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		252C462916F6849A00CF1FEA /* Resources */ = {
+		25AE19B31809A70E00AF5535 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,19 +237,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		252C45E716F681D500CF1FEA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		252C462A16F6849A00CF1FEA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,6 +249,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		8E44984BB1724F918488E8F7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		AA43535990A24CE6A7A9E0A2 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -281,46 +279,41 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-osx-resources.sh\"\n";
 		};
-		EA7B409C42F84B02982565CA /* Copy Pods Resources */ = {
+		FB4F6E92C45C44DF8B42F3A3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-ios-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		252C45E416F681D500CF1FEA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2580156117457E1B0026AA6E /* TKStateMachine.m in Sources */,
-				2580156217457E1B0026AA6E /* TKEvent.m in Sources */,
-				2580156317457E1B0026AA6E /* TKState.m in Sources */,
-				252C465216F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */,
-				252C465616F6A58700CF1FEA /* TKEventSpec.m in Sources */,
-				252C465A16F6A59500CF1FEA /* TKStateSpec.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		252C462716F6849A00CF1FEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2580156417457E240026AA6E /* TKStateMachine.m in Sources */,
-				2580156517457E240026AA6E /* TKEvent.m in Sources */,
-				2580156617457E240026AA6E /* TKState.m in Sources */,
 				252C465316F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */,
 				252C465716F6A58700CF1FEA /* TKEventSpec.m in Sources */,
 				252C465B16F6A59500CF1FEA /* TKStateSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25AE19B11809A70E00AF5535 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25AE19C51809A72400AF5535 /* TKStateMachineSpec.m in Sources */,
+				25AE19C61809A72400AF5535 /* TKEventSpec.m in Sources */,
+				25AE19C71809A72400AF5535 /* TKStateSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,49 +384,11 @@
 			};
 			name = Release;
 		};
-		252C460116F681D500CF1FEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
-				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		252C460216F681D500CF1FEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
-				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 		252C463F16F6849A00CF1FEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E692EE6FFE544353AB3E3A1D /* Pods-osx.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
@@ -452,10 +407,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
@@ -464,6 +415,65 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		25AE19C31809A70E00AF5535 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		25AE19C41809A70E00AF5535 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Code/TransitionKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -480,20 +490,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		252C460016F681D500CF1FEA /* Build configuration list for PBXNativeTarget "iOS Specs" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				252C460116F681D500CF1FEA /* Debug */,
-				252C460216F681D500CF1FEA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		252C463E16F6849A00CF1FEA /* Build configuration list for PBXNativeTarget "OS X Specs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				252C463F16F6849A00CF1FEA /* Debug */,
 				252C464016F6849A00CF1FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25AE19C21809A70E00AF5535 /* Build configuration list for PBXNativeTarget "iOS Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AE19C31809A70E00AF5535 /* Debug */,
+				25AE19C41809A70E00AF5535 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

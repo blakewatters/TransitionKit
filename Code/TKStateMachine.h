@@ -22,7 +22,6 @@
 
 @class TKEvent, TKState;
 
-
 /**
  The `TKStateMachine` class provides an interface for modeling a state machine. The state machine supports the registration of an arbitrary number of states and events that trigger transitions between the states.
  
@@ -168,7 +167,7 @@
 /**
  Activates the receiver by making it immutable and transitioning into the initial state.
  
- Once the state machine has been activated no further changes can be made to the registered events and states.
+ Once the state machine has been activated no further changes can be made to the registered events and states. Note that although callbacks will be dispatched for transition into the initial state upon activation, they will have a `nil` transition argument as no event has been fired.
  */
 - (void)activate;
 
@@ -195,10 +194,11 @@
  If the receiver has not yet been activated, then the first event fired will activate it. If the specified transition is not permitted, then `NO` will be returned and an `TKInvalidTransitionError` will be created. If the `shouldFireEventBlock` of the specified event returns `NO`, then the event is declined, `NO` will be returned, and an `TKTransitionDeclinedError` will be created.
  
  @param eventOrEventName A `TKEvent` object or an `NSString` object that identifies an event by name.
+ @param userInfo An optional dictionary of user info to be delivered as part of the state transition.
  @param error A pointer to an `NSError` object that will be set if the event fails to fire.
  @return `YES` if the event is fired, else `NO`.
  */
-- (BOOL)fireEvent:(id)eventOrEventName error:(NSError **)error;
+- (BOOL)fireEvent:(id)eventOrEventName userInfo:(NSDictionary *)userInfo error:(NSError **)error;
 
 @end
 
