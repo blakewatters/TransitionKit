@@ -5,12 +5,12 @@ namespace :spec do
   
   desc "Run the TransitionKit Specs for iOS"
   task :ios => :prepare do
-    $ios_success = system("xctool -workspace TransitionKit.xcworkspace -scheme 'iOS Specs' -sdk iphonesimulator build build-tests run-tests -test-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO")
+    $ios_success = system("xctool -workspace TransitionKit.xcworkspace -scheme 'iOS Specs' -sdk iphonesimulator test -test-sdk iphonesimulator ONLY_ACTIVE_ARCH=NO")
   end
   
   desc "Run the TransitionKit Specs for Mac OS X"
   task :osx => :prepare do
-    $osx_success = system("xctool -workspace TransitionKit.xcworkspace -scheme 'OS X Specs' -sdk macosx build build-tests run-tests -test-sdk macosx")
+    $osx_success = system("xctool -workspace TransitionKit.xcworkspace -scheme 'OS X Specs' -sdk macosx test -test-sdk macosx")
   end
 end
 
