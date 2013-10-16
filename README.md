@@ -91,10 +91,11 @@ TKEvent *markAsUnread = [TKEvent eventWithName:@"Mark as Unread" transitioningFr
 [inboxStateMachine isInState:@"Unread"]; // YES, the initial state
 
 // Fire some events
+NSDictionary *userInfo = nil;
 NSError *error = nil;
-BOOL success = [inboxStateMachine fireEvent:@"View Message" error:&error]; // YES
-success = [inboxStateMachine fireEvent:@"Delete Message" error:&error]; // YES
-success = [inboxStateMachine fireEvent:@"Mark as Unread" error:&error]; // YES
+BOOL success = [inboxStateMachine fireEvent:@"View Message" userInfo:userInfo error:&error]; // YES
+success = [inboxStateMachine fireEvent:@"Delete Message" userInfo:userInfo error:&error]; // YES
+success = [inboxStateMachine fireEvent:@"Mark as Unread" userInfo:userInfo error:&error]; // YES
 
 success = [inboxStateMachine canFireEvent:@"Mark as Unread"]; // NO
 
