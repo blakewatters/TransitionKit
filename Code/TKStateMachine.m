@@ -109,7 +109,7 @@ static NSString *TKQuoteString(NSString *string)
 - (void)addState:(TKState *)state
 {
     TKRaiseIfActive();
-    if (! [state isKindOfClass:[TKState class]]) [NSException raise:NSInvalidArgumentException format:@"Expected a `TKState` object or `NSString` object specifying the name of a state, instead got a `%@` (%@)", [state class], state];
+    if (! [state isKindOfClass:[TKState class]]) [NSException raise:NSInvalidArgumentException format:@"Expected a `TKState` object, instead got a `%@` (%@)", [state class], state];
     if (self.initialState == nil) self.initialState = state;
     [self.mutableStates addObject:state];
 }
