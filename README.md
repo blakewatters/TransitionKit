@@ -2,8 +2,8 @@ TransitionKit
 =============
 
 [![Build Status](https://travis-ci.org/blakewatters/TransitionKit.png?branch=master,development)](https://travis-ci.org/blakewatters/TransitionKit) 
-![Pod Version](http://cocoapod-badges.herokuapp.com/v/TransitionKit/badge.png) 
-![Pod Platform](http://cocoapod-badges.herokuapp.com/p/TransitionKit/badge.png)
+![Pod Version](https://cocoapod-badges.herokuapp.com/v/TransitionKit/badge.png) 
+![Pod Platform](https://cocoapod-badges.herokuapp.com/p/TransitionKit/badge.png)
 
 **A simple, elegantly designed block based API for implementing State Machines in Objective-C**
 
