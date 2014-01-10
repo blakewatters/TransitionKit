@@ -218,7 +218,7 @@ describe(@"addState:", ^{
         it(@"raises an NSInvalidArgumentException", ^{
             [[theBlock(^{
                 [stateMachine addState:(TKState *)@1234];
-            }) should] raiseWithName:NSInvalidArgumentException reason:@"Expected a `TKState` object or `NSString` object specifying the name of a state, instead got a `__NSCFNumber` (1234)"];
+            }) should] raiseWithName:NSInvalidArgumentException reason:@"Expected a `TKState` object, instead got a `__NSCFNumber` (1234)"];
         });
     });
 });
