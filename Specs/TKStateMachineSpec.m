@@ -69,6 +69,17 @@ context(@"when initialized", ^{
             [stateMachine addState:state];
         });
         
+
+        context(@"which name is already present", ^{
+            it(@"raises an exception", ^{
+                TKState *singleState = [TKState stateWithName:@"Single"];
+
+                [[theBlock(^{
+                    [stateMachine addState:singleState];
+                }) should] raiseWithName:NSInvalidArgumentException reason:@"State with name `Single` already exists"];
+            });
+        });
+
         it(@"has a state count of 1", ^{
             [[stateMachine.states should] haveCountOf:1];
         });
@@ -182,7 +193,6 @@ describe(@"setting the initial state", ^{
     
     context(@"when the state machine has not been started", ^{
         beforeEach(^{
-            [stateMachine addState:[TKState stateWithName:@"Dating"]];
             stateMachine.initialState = [stateMachine stateNamed:@"Dating"];
         });
         
@@ -218,7 +228,7 @@ describe(@"addState:", ^{
         it(@"raises an NSInvalidArgumentException", ^{
             [[theBlock(^{
                 [stateMachine addState:(TKState *)@1234];
-            }) should] raiseWithName:NSInvalidArgumentException reason:@"Expected a `TKState` object or `NSString` object specifying the name of a state, instead got a `__NSCFNumber` (1234)"];
+            }) should] raiseWithName:NSInvalidArgumentException reason:@"Expected a `TKState` object, instead got a `__NSCFNumber` (1234)"];
         });
     });
 });
