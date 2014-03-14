@@ -57,6 +57,7 @@ static NSString *TKQuoteString(NSString *string)
 @property (nonatomic, strong) NSMutableSet *mutableEvents;
 @property (nonatomic, assign, getter = isActive) BOOL active;
 @property (nonatomic, strong, readwrite) TKState *currentState;
+@property (nonatomic, strong) NSRecursiveLock *lock;
 @end
 
 @implementation TKStateMachine
@@ -84,6 +85,7 @@ static NSString *TKQuoteString(NSString *string)
     if (self) {
         self.mutableStates = [NSMutableSet set];
         self.mutableEvents = [NSMutableSet set];
+        self.lock = [NSRecursiveLock new];
     }
     return self;
 }
@@ -179,12 +181,14 @@ static NSString *TKQuoteString(NSString *string)
 - (void)activate
 {
     if (self.isActive) [NSException raise:NSInternalInconsistencyException format:@"The state machine has already been activated."];
+    [self.lock lock];
     self.active = YES;
     
     // Dispatch callbacks to establish initial state
     if (self.initialState.willEnterStateBlock) self.initialState.willEnterStateBlock(self.initialState, nil);
     self.currentState = self.initialState;
     if (self.initialState.didEnterStateBlock) self.initialState.didEnterStateBlock(self.initialState, nil);
+    [self.lock unlock];
 }
 
 - (BOOL)canFireEvent:(id)eventOrEventName
@@ -197,6 +201,7 @@ static NSString *TKQuoteString(NSString *string)
 
 - (BOOL)fireEvent:(id)eventOrEventName userInfo:(NSDictionary *)userInfo error:(NSError *__autoreleasing *)error
 {
+    [self.lock lock];
     if (! self.isActive) [self activate];
     if (! [eventOrEventName isKindOfClass:[TKEvent class]] && ![eventOrEventName isKindOfClass:[NSString class]]) [NSException raise:NSInvalidArgumentException format:@"Expected a `TKEvent` object or `NSString` object specifying the name of an event, instead got a `%@` (%@)", [eventOrEventName class], eventOrEventName];
     TKEvent *event = [eventOrEventName isKindOfClass:[TKEvent class]] ? eventOrEventName : [self eventNamed:eventOrEventName];
@@ -207,6 +212,7 @@ static NSString *TKQuoteString(NSString *string)
         NSString *failureReason = [NSString stringWithFormat:@"An attempt was made to fire the '%@' event while in the '%@' state, but the event can only be fired from the following states: %@", event.name, self.currentState.name, [[event.sourceStates valueForKey:@"name"] componentsJoinedByString:@", "]];
         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The event cannot be fired from the current state.", NSLocalizedFailureReasonErrorKey: failureReason };
         if (error) *error = [NSError errorWithDomain:TKErrorDomain code:TKInvalidTransitionError userInfo:userInfo];
+        [self.lock unlock];
         return NO;
     }
 
@@ -216,6 +222,7 @@ static NSString *TKQuoteString(NSString *string)
             NSString *failureReason = [NSString stringWithFormat:@"An attempt to fire the '%@' event was declined because `shouldFireEventBlock` returned `NO`.", event.name];
             NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: @"The event declined to be fired.", NSLocalizedFailureReasonErrorKey: failureReason };
             if (error) *error = [NSError errorWithDomain:TKErrorDomain code:TKTransitionDeclinedError userInfo:userInfo];
+            [self.lock unlock];
             return NO;
         }
     }
@@ -232,6 +239,7 @@ static NSString *TKQuoteString(NSString *string)
     if (newState.didEnterStateBlock) newState.didEnterStateBlock(newState, transition);
     
     if (event.didFireEventBlock) event.didFireEventBlock(event, transition);
+    [self.lock unlock];
 
     NSMutableDictionary *notificationInfo = [userInfo mutableCopy] ?: [NSMutableDictionary dictionary];
     [notificationInfo addEntriesFromDictionary:@{ TKStateMachineDidChangeStateOldStateUserInfoKey: oldState,
