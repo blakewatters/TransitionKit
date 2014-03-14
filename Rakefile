@@ -1,16 +1,18 @@
+require 'rubygems'
+
 namespace :spec do
   task :prepare do
     system("mkdir -p TransitionKit.xcodeproj/xcshareddata/xcschemes && cp Specs/Schemes/*.xcscheme TransitionKit.xcodeproj/xcshareddata/xcschemes/")
   end
   
   desc "Run the TransitionKit Specs for iOS"
-  task :ios => :prepare do
-    $ios_success = system("xctool -workspace TransitionKit.xcworkspace -scheme 'iOS Specs' -sdk iphonesimulator test -test-sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO")
+  task :ios => :prepare do    
+    $ios_success = system("xcodebuild -workspace TransitionKit.xcworkspace -scheme 'iOS Specs' -sdk iphonesimulator clean test | xcpretty -c ; exit ${PIPESTATUS[0]}")
   end
   
   desc "Run the TransitionKit Specs for Mac OS X"
   task :osx => :prepare do
-    $osx_success = system("xctool -workspace TransitionKit.xcworkspace -scheme 'OS X Specs' -sdk macosx test -test-sdk macosx")
+    $osx_success = system("xcodebuild -workspace TransitionKit.xcworkspace -scheme 'OS X Specs' -sdk macosx clean test | xcpretty -c ; exit ${PIPESTATUS[0]}")
   end
 end
 
