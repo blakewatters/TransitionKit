@@ -1,10 +1,10 @@
 PODS:
-  - Kiwi/ARC (2.2.3)
-  - Kiwi/NonARC (2.2.3)
-  - Kiwi/XCTest (2.2.3):
+  - Kiwi/ARC (2.2.4)
+  - Kiwi/NonARC (2.2.4)
+  - Kiwi/XCTest (2.2.4):
     - Kiwi/ARC
     - Kiwi/NonARC
-  - TransitionKit (2.0.0)
+  - TransitionKit (2.1.0)
 
 DEPENDENCIES:
   - Kiwi/XCTest (~> 2.2.3)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: .
 
 SPEC CHECKSUMS:
-  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
-  TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
+  Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
+  TransitionKit: 60b6a2cd9370e471c960b2cdf23b0b2593867625
 
 COCOAPODS: 0.29.0
