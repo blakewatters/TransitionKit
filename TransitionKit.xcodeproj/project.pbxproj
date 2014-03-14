@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		252C462D16F6849A00CF1FEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EA16F681D500CF1FEA /* SenTestingKit.framework */; };
 		252C462E16F6849A00CF1FEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C461716F6849A00CF1FEA /* Cocoa.framework */; };
 		252C465316F6A57700CF1FEA /* TKStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465116F6A57700CF1FEA /* TKStateMachineSpec.m */; };
 		252C465716F6A58700CF1FEA /* TKEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465516F6A58700CF1FEA /* TKEventSpec.m */; };
 		252C465B16F6A59500CF1FEA /* TKStateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465916F6A59500CF1FEA /* TKStateSpec.m */; };
-		25AE19B61809A70E00AF5535 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EA16F681D500CF1FEA /* SenTestingKit.framework */; };
 		25AE19B71809A70E00AF5535 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45DB16F681D400CF1FEA /* Foundation.framework */; };
 		25AE19B81809A70E00AF5535 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252C45EC16F681D500CF1FEA /* UIKit.framework */; };
 		25AE19C51809A72400AF5535 /* TKStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 252C465116F6A57700CF1FEA /* TKStateMachineSpec.m */; };
@@ -24,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		252C45DB16F681D400CF1FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		252C45EA16F681D500CF1FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		252C45EC16F681D500CF1FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		252C460416F6833D00CF1FEA /* TransitionKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TransitionKit-Prefix.pch"; sourceTree = "<group>"; };
 		252C460A16F6835900CF1FEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -33,7 +30,7 @@
 		252C461A16F6849A00CF1FEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		252C461B16F6849A00CF1FEA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		252C461C16F6849A00CF1FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		252C462C16F6849A00CF1FEA /* OS X Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OS X Specs.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		252C462C16F6849A00CF1FEA /* OS X Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OS X Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		252C464116F6A4B500CF1FEA /* TKStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStateMachine.h; sourceTree = "<group>"; };
 		252C464216F6A4B500CF1FEA /* TKStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStateMachine.m; sourceTree = "<group>"; };
 		252C464616F6A4C200CF1FEA /* TKEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKEvent.h; sourceTree = "<group>"; };
@@ -44,7 +41,7 @@
 		252C465516F6A58700CF1FEA /* TKEventSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKEventSpec.m; sourceTree = "<group>"; };
 		252C465916F6A59500CF1FEA /* TKStateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStateSpec.m; sourceTree = "<group>"; };
 		252C465C16F6A79100CF1FEA /* TransitionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionKit.h; sourceTree = "<group>"; };
-		25AE19B51809A70E00AF5535 /* iOS Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Specs.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25AE19B51809A70E00AF5535 /* iOS Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25B01F9A1808941D007488E1 /* TKTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTransition.h; sourceTree = "<group>"; };
 		25B01F9B1808941D007488E1 /* TKTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTransition.m; sourceTree = "<group>"; };
 		32A48E628DDE45B98F10DBA5 /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				252C462D16F6849A00CF1FEA /* SenTestingKit.framework in Frameworks */,
 				252C462E16F6849A00CF1FEA /* Cocoa.framework in Frameworks */,
 				42AE467DF3384AE6834629CA /* libPods-osx.a in Frameworks */,
 			);
@@ -68,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25AE19B61809A70E00AF5535 /* SenTestingKit.framework in Frameworks */,
 				25AE19B81809A70E00AF5535 /* UIKit.framework in Frameworks */,
 				25AE19B71809A70E00AF5535 /* Foundation.framework in Frameworks */,
 				2F4EC36CAD4D4CB08D744BB4 /* libPods-ios.a in Frameworks */,
@@ -93,8 +88,8 @@
 		252C45D916F681D400CF1FEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				252C462C16F6849A00CF1FEA /* OS X Specs.octest */,
-				25AE19B51809A70E00AF5535 /* iOS Specs.octest */,
+				252C462C16F6849A00CF1FEA /* OS X Specs.xctest */,
+				25AE19B51809A70E00AF5535 /* iOS Specs.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				252C45DB16F681D400CF1FEA /* Foundation.framework */,
-				252C45EA16F681D500CF1FEA /* SenTestingKit.framework */,
 				252C45EC16F681D500CF1FEA /* UIKit.framework */,
 				252C461716F6849A00CF1FEA /* Cocoa.framework */,
 				252C461916F6849A00CF1FEA /* Other Frameworks */,
@@ -171,8 +165,8 @@
 			);
 			name = "OS X Specs";
 			productName = TransitionKitFrameworkTests;
-			productReference = 252C462C16F6849A00CF1FEA /* OS X Specs.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 252C462C16F6849A00CF1FEA /* OS X Specs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		25AE19B41809A70E00AF5535 /* iOS Specs */ = {
 			isa = PBXNativeTarget;
@@ -190,8 +184,8 @@
 			);
 			name = "iOS Specs";
 			productName = "iOS Specs";
-			productReference = 25AE19B51809A70E00AF5535 /* iOS Specs.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 25AE19B51809A70E00AF5535 /* iOS Specs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -199,7 +193,8 @@
 		252C45D016F681D400CF1FEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 252C45D316F681D400CF1FEA /* Build configuration list for PBXProject "TransitionKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -397,7 +392,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -415,7 +409,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -423,7 +416,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -446,7 +438,6 @@
 				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -454,7 +445,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4617986E2EAF4812B3EF4B07 /* Pods-ios.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -474,7 +464,6 @@
 				INFOPLIST_FILE = "Specs/TransitionKitTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

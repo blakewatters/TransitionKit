@@ -3,7 +3,7 @@ target :ios do
   link_with 'iOS Specs'
   
   pod 'TransitionKit', path: '.'
-  pod 'Kiwi/SenTestingKit', '~> 2.2'
+  pod 'Kiwi/XCTest', '~> 2.2.3'
 end
 
 target :osx do
@@ -11,5 +11,5 @@ target :osx do
   link_with 'OS X Specs'
   
   pod 'TransitionKit', path: '.'
-  pod 'Kiwi/SenTestingKit', '~> 2.2.2'
+  pod 'Kiwi/XCTest', '~> 2.2.3'
 end
