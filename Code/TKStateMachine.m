@@ -110,6 +110,8 @@ static NSString *TKQuoteString(NSString *string)
 {
     TKRaiseIfActive();
     if (! [state isKindOfClass:[TKState class]]) [NSException raise:NSInvalidArgumentException format:@"Expected a `TKState` object, instead got a `%@` (%@)", [state class], state];
+    if ([self stateNamed: state.name]) [NSException raise:NSInvalidArgumentException format:@"State with name `%@` already exists", state.name];
+
     if (self.initialState == nil) self.initialState = state;
     [self.mutableStates addObject:state];
 }
