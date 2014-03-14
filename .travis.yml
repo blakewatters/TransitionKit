@@ -1,6 +1,4 @@
 language: objective-c
 before_install:
-    - brew update
-    - brew uninstall xctool
-    - brew install xctool
-script: rake spec
+    - gem install cocoapods
+script: bundle exec rake spec
