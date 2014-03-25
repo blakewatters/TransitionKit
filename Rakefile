@@ -1,29 +1,20 @@
 require 'rubygems'
+require 'bundler'
+Bundler.setup
+require 'xctasks/test_task'
 
-namespace :spec do
-  task :prepare do
-    system("mkdir -p TransitionKit.xcodeproj/xcshareddata/xcschemes && cp Specs/Schemes/*.xcscheme TransitionKit.xcodeproj/xcshareddata/xcschemes/")
+XCTasks::TestTask.new(:spec) do |t|
+  t.workspace = 'TransitionKit.xcworkspace'
+  t.schemes_dir = 'Specs/Schemes'
+  t.runner = :xcpretty
+  t.actions = %w{clean test}
+  
+  t.subtask(ios: 'iOS Specs') do |s|
+    s.sdk = :iphonesimulator
   end
   
-  desc "Run the TransitionKit Specs for iOS"
-  task :ios => :prepare do    
-    $ios_success = system("xcodebuild -workspace TransitionKit.xcworkspace -scheme 'iOS Specs' -sdk iphonesimulator clean test | xcpretty -c ; exit ${PIPESTATUS[0]}")
-  end
-  
-  desc "Run the TransitionKit Specs for Mac OS X"
-  task :osx => :prepare do
-    $osx_success = system("xcodebuild -workspace TransitionKit.xcworkspace -scheme 'OS X Specs' -sdk macosx clean test | xcpretty -c ; exit ${PIPESTATUS[0]}")
-  end
-end
-
-desc "Run the TransitionKit Specs for iOS & Mac OS X"
-task :spec => ['spec:ios', 'spec:osx'] do
-  puts "\033[0;31m!! iOS specs failed" unless $ios_success
-  puts "\033[0;31m!! OS X specs failed" unless $osx_success
-  if $ios_success && $osx_success
-    puts "\033[0;32m** All tests executed successfully"
-  else
-    exit(-1)
+  t.subtask(osx: 'OS X Specs') do |s|
+    s.sdk = :macosx
   end
 end
 
