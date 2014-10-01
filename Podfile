@@ -1,9 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 target :ios do
   platform :ios, '5.0'
   link_with 'iOS Specs'
   
   pod 'TransitionKit', path: '.'
-  pod 'Kiwi/XCTest', '~> 2.2.3'
+  pod 'Kiwi', '~> 2.3.0'
 end
 
 target :osx do
@@ -11,5 +13,5 @@ target :osx do
   link_with 'OS X Specs'
   
   pod 'TransitionKit', path: '.'
-  pod 'Kiwi/XCTest', '~> 2.2.3'
+  pod 'Kiwi', '~> 2.3.0'
 end
