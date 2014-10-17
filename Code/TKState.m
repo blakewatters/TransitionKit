@@ -22,6 +22,7 @@
 
 @interface TKState ()
 @property (nonatomic, copy, readwrite) NSString *name;
+@property (nonatomic, copy, readwrite) NSDictionary *userInfo;
 @property (nonatomic, copy) void (^willEnterStateBlock)(TKState *, TKTransition *);
 @property (nonatomic, copy) void (^didEnterStateBlock)(TKState *, TKTransition *);
 @property (nonatomic, copy) void (^willExitStateBlock)(TKState *, TKTransition *);
@@ -30,12 +31,18 @@
 
 @implementation TKState
 
-+ (instancetype)stateWithName:(NSString *)name
++ (instancetype)stateWithName:(NSString *)name userInfo:(NSDictionary *)userInfo
 {
     if (! [name length]) [NSException raise:NSInvalidArgumentException format:@"The `name` cannot be blank."];
     TKState *state = [TKState new];
     state.name = name;
+    state.userInfo = userInfo;
     return state;
+}
+
++ (instancetype)stateWithName:(NSString *)name
+{
+    return [self stateWithName:name userInfo:nil];
 }
 
 - (NSString *)description
