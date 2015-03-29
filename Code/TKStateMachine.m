@@ -238,9 +238,12 @@ static NSString *TKQuoteString(NSString *string)
     self.currentState = newState;
     
     NSMutableDictionary *notificationInfo = [userInfo mutableCopy] ?: [NSMutableDictionary dictionary];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [notificationInfo addEntriesFromDictionary:@{ TKStateMachineDidChangeStateOldStateUserInfoKey: oldState,
                                                   TKStateMachineDidChangeStateNewStateUserInfoKey: newState,
                                                   TKStateMachineDidChangeStateEventUserInfoKey: event,
+#pragma clang diagnostic pop
                                                   TKStateMachineDidChangeStateTransitionUserInfoKey: transition }];
     [[NSNotificationCenter defaultCenter] postNotificationName:TKStateMachineDidChangeStateNotification object:self userInfo:notificationInfo];
     
