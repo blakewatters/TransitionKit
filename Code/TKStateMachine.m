@@ -235,17 +235,18 @@ static NSString *TKQuoteString(NSString *string)
     if (oldState.willExitStateBlock) oldState.willExitStateBlock(oldState, transition);
     if (newState.willEnterStateBlock) newState.willEnterStateBlock(newState, transition);
     self.currentState = newState;
-    if (oldState.didExitStateBlock) oldState.didExitStateBlock(oldState, transition);
-    if (newState.didEnterStateBlock) newState.didEnterStateBlock(newState, transition);
     
-    if (event.didFireEventBlock) event.didFireEventBlock(event, transition);
-    [self.lock unlock];
-
     NSMutableDictionary *notificationInfo = [userInfo mutableCopy] ?: [NSMutableDictionary dictionary];
     [notificationInfo addEntriesFromDictionary:@{ TKStateMachineDidChangeStateOldStateUserInfoKey: oldState,
                                                   TKStateMachineDidChangeStateNewStateUserInfoKey: newState,
                                                   TKStateMachineDidChangeStateEventUserInfoKey: event }];
     [[NSNotificationCenter defaultCenter] postNotificationName:TKStateMachineDidChangeStateNotification object:self userInfo:notificationInfo];
+    
+    if (oldState.didExitStateBlock) oldState.didExitStateBlock(oldState, transition);
+    if (newState.didEnterStateBlock) newState.didEnterStateBlock(newState, transition);
+    
+    if (event.didFireEventBlock) event.didFireEventBlock(event, transition);
+    [self.lock unlock];
     
     return YES;
 }
