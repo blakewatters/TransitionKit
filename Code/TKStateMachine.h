@@ -232,6 +232,11 @@ extern NSString *const TKStateMachineDidChangeStateNewStateUserInfoKey;
 extern NSString *const TKStateMachineDidChangeStateEventUserInfoKey;
 
 /**
+ A key in the `userInfo` dictionary of a `TKStateMachineDidChangeStateNotification` notification specifying the transition (TKTransition) between states.
+ */
+extern NSString *const TKStateMachineDidChangeStateTransitionUserInfoKey;
+
+/**
  An exception raised when an attempt is made to mutate an immutable `TKStateMachine` object.
  */
 extern NSString *const TKStateMachineIsImmutableException;

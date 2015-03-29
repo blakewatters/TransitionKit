@@ -41,6 +41,7 @@ NSString *const TKStateMachineDidChangeStateNotification = @"TKStateMachineDidCh
 NSString *const TKStateMachineDidChangeStateOldStateUserInfoKey = @"old";
 NSString *const TKStateMachineDidChangeStateNewStateUserInfoKey = @"new";
 NSString *const TKStateMachineDidChangeStateEventUserInfoKey = @"event";
+NSString *const TKStateMachineDidChangeStateTransitionUserInfoKey = @"transition";
 
 NSString *const TKStateMachineIsImmutableException = @"TKStateMachineIsImmutableException";
 
@@ -239,7 +240,8 @@ static NSString *TKQuoteString(NSString *string)
     NSMutableDictionary *notificationInfo = [userInfo mutableCopy] ?: [NSMutableDictionary dictionary];
     [notificationInfo addEntriesFromDictionary:@{ TKStateMachineDidChangeStateOldStateUserInfoKey: oldState,
                                                   TKStateMachineDidChangeStateNewStateUserInfoKey: newState,
-                                                  TKStateMachineDidChangeStateEventUserInfoKey: event }];
+                                                  TKStateMachineDidChangeStateEventUserInfoKey: event,
+                                                  TKStateMachineDidChangeStateTransitionUserInfoKey: transition }];
     [[NSNotificationCenter defaultCenter] postNotificationName:TKStateMachineDidChangeStateNotification object:self userInfo:notificationInfo];
     
     if (oldState.didExitStateBlock) oldState.didExitStateBlock(oldState, transition);
