@@ -219,17 +219,22 @@ extern NSString *const TKStateMachineDidChangeStateNotification;
 /**
  A key in the `userInfo` dictionary of a `TKStateMachineDidChangeStateNotification` notification specifying the state of the machine before the transition occured.
  */
-extern NSString *const TKStateMachineDidChangeStateOldStateUserInfoKey;
+extern NSString *const TKStateMachineDidChangeStateOldStateUserInfoKey DEPRECATED_MSG_ATTRIBUTE("Use TKStateMachineDidChangeStateTransitionUserInfoKey instead (transition.sourceState).");
 
 /**
  A key in the `userInfo` dictionary of a `TKStateMachineDidChangeStateNotification` notification specifying the state of the machine after the transition occured.
  */
-extern NSString *const TKStateMachineDidChangeStateNewStateUserInfoKey;
+extern NSString *const TKStateMachineDidChangeStateNewStateUserInfoKey DEPRECATED_MSG_ATTRIBUTE("Use TKStateMachineDidChangeStateTransitionUserInfoKey instead (transition.destinationState).");
 
 /**
  A key in the `userInfo` dictionary of a `TKStateMachineDidChangeStateNotification` notification specifying the event that triggered the transition between states.
  */
-extern NSString *const TKStateMachineDidChangeStateEventUserInfoKey;
+extern NSString *const TKStateMachineDidChangeStateEventUserInfoKey DEPRECATED_MSG_ATTRIBUTE("Use TKStateMachineDidChangeStateTransitionUserInfoKey instead (transition.event).");
+
+/**
+ A key in the `userInfo` dictionary of a `TKStateMachineDidChangeStateNotification` notification specifying the transition (TKTransition) between states.
+ */
+extern NSString *const TKStateMachineDidChangeStateTransitionUserInfoKey;
 
 /**
  An exception raised when an attempt is made to mutate an immutable `TKStateMachine` object.

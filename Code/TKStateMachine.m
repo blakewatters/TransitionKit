@@ -41,6 +41,7 @@ NSString *const TKStateMachineDidChangeStateNotification = @"TKStateMachineDidCh
 NSString *const TKStateMachineDidChangeStateOldStateUserInfoKey = @"old";
 NSString *const TKStateMachineDidChangeStateNewStateUserInfoKey = @"new";
 NSString *const TKStateMachineDidChangeStateEventUserInfoKey = @"event";
+NSString *const TKStateMachineDidChangeStateTransitionUserInfoKey = @"transition";
 
 NSString *const TKStateMachineIsImmutableException = @"TKStateMachineIsImmutableException";
 
@@ -235,17 +236,22 @@ static NSString *TKQuoteString(NSString *string)
     if (oldState.willExitStateBlock) oldState.willExitStateBlock(oldState, transition);
     if (newState.willEnterStateBlock) newState.willEnterStateBlock(newState, transition);
     self.currentState = newState;
+    
+    NSMutableDictionary *notificationInfo = [userInfo mutableCopy] ?: [NSMutableDictionary dictionary];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    [notificationInfo addEntriesFromDictionary:@{ TKStateMachineDidChangeStateOldStateUserInfoKey: oldState,
+                                                  TKStateMachineDidChangeStateNewStateUserInfoKey: newState,
+                                                  TKStateMachineDidChangeStateEventUserInfoKey: event,
+#pragma clang diagnostic pop
+                                                  TKStateMachineDidChangeStateTransitionUserInfoKey: transition }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TKStateMachineDidChangeStateNotification object:self userInfo:notificationInfo];
+    
     if (oldState.didExitStateBlock) oldState.didExitStateBlock(oldState, transition);
     if (newState.didEnterStateBlock) newState.didEnterStateBlock(newState, transition);
     
     if (event.didFireEventBlock) event.didFireEventBlock(event, transition);
     [self.lock unlock];
-
-    NSMutableDictionary *notificationInfo = [userInfo mutableCopy] ?: [NSMutableDictionary dictionary];
-    [notificationInfo addEntriesFromDictionary:@{ TKStateMachineDidChangeStateOldStateUserInfoKey: oldState,
-                                                  TKStateMachineDidChangeStateNewStateUserInfoKey: newState,
-                                                  TKStateMachineDidChangeStateEventUserInfoKey: event }];
-    [[NSNotificationCenter defaultCenter] postNotificationName:TKStateMachineDidChangeStateNotification object:self userInfo:notificationInfo];
     
     return YES;
 }

@@ -401,10 +401,11 @@ describe(@"A State Machine Modeling Dating", ^{
             [stateMachine fireEvent:@"Start Dating" userInfo:nil error:nil];
             [[expectFutureValue(notification) shouldEventually] beNonNil];
             [[NSNotificationCenter defaultCenter] removeObserver:observer];
-            [notification.userInfo shouldNotBeNil];
-            [[[[notification.userInfo objectForKey:TKStateMachineDidChangeStateOldStateUserInfoKey] name] should] equal:@"Single"];
-            [[[[notification.userInfo objectForKey:TKStateMachineDidChangeStateNewStateUserInfoKey] name] should] equal:@"Dating"];
-            [[[[notification.userInfo objectForKey:TKStateMachineDidChangeStateEventUserInfoKey] name] should] equal:@"Start Dating"];
+            TKTransition *transition = notification.userInfo[TKStateMachineDidChangeStateTransitionUserInfoKey];
+            [transition shouldNotBeNil];
+            [[transition.sourceState.name should] equal:@"Single"];
+            [[transition.destinationState.name should] equal:@"Dating"];
+            [[transition.event.name should] equal:@"Start Dating"];
         });
     });
     
