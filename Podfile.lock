@@ -1,6 +1,6 @@
 PODS:
-  - Kiwi (2.3.0)
-  - TransitionKit (2.1.1)
+  - Kiwi (2.3.1)
+  - TransitionKit (2.2.0)
 
 DEPENDENCIES:
   - Kiwi (~> 2.3.0)
@@ -8,10 +8,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   TransitionKit:
-    :path: .
+    :path: "."
 
 SPEC CHECKSUMS:
-  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
-  TransitionKit: 157c582bf47134afe9ef0dc747d1f0f74008f7e5
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
+  TransitionKit: 5c9001a77acc409d71f26a4eba0159cf8619c418
 
-COCOAPODS: 0.34.1
+COCOAPODS: 0.36.4
