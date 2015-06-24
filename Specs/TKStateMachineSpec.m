@@ -57,6 +57,10 @@ context(@"when initialized", ^{
         [stateMachine.initialState shouldBeNil];
     });
     
+    it(@"has a nil current state", ^{
+        [stateMachine.currentState shouldBeNil];
+    });
+    
     it(@"has no events", ^{
         [[stateMachine.events should] haveCountOf:0];
     });
@@ -263,11 +267,23 @@ describe(@"fireEvent:userInfo:error", ^{
         stateMachine.initialState = [stateMachine stateNamed:@"Dating"];
         [stateMachine activate];
     });
+    
+    context(@"when attempting to set the currentState to `nil`", ^{
+        it(@"should raise", ^{
+            __block NSException *exception;
+            @try {
+                [stateMachine setValue:nil forKey:@"currentState"];
+            } @catch (NSException *anException) {
+                exception = anException;
+            }
+            [[exception.name should] equal:NSInvalidArgumentException];
+            [[exception.reason should] startWithString:@"Cannot assign currentState to `nil`: Expected a `TKState` object."];
+        });
+    });
 
     it(@"invokes callbacks with a TKTransition describing the state change", ^{
         __block TKTransition *blockTransition;
         [singleState setWillEnterStateBlock:^(TKState *state, TKTransition *transition) {
-            NSLog(@"dsfdsfds");
             blockTransition = transition;
         }];
         NSError *error = nil;

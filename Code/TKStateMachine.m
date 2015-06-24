@@ -104,6 +104,14 @@ static NSString *TKQuoteString(NSString *string)
     _initialState = initialState;
 }
 
+- (void)setCurrentState:(TKState *)currentState
+{
+    if (currentState == nil) {
+        [NSException raise:NSInvalidArgumentException format:@"Cannot assign currentState to `nil`: Expected a `TKState` object. (%@)", self];
+    }
+    _currentState = currentState;
+}
+
 - (NSSet *)states
 {
     return [NSSet setWithSet:self.mutableStates];
@@ -288,7 +296,6 @@ static NSString *TKQuoteString(NSString *string)
 {
     TKStateMachine *copiedStateMachine = [[[self class] allocWithZone:zone] init];
     copiedStateMachine.active = NO;
-    copiedStateMachine.currentState = nil;
     copiedStateMachine.initialState = self.initialState;
     
     for (TKState *state in self.states) {
