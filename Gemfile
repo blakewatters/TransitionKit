@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rake', '~> 10.3.0'
-gem 'cocoapods', '~> 0.34.1'
-gem 'xcpretty', '~> 0.1.6'
-gem 'xctasks', '~> 0.4.1'
+gem 'rake', '~> 10.4.2'
+gem 'cocoapods', '~> 0.37.2'
+gem 'xcpretty', '~> 0.1.10'
+gem 'xctasks', '~> 0.6.0'
