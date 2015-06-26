@@ -33,7 +33,7 @@
 + (instancetype)stateWithName:(NSString *)name
 {
     if (! [name length]) [NSException raise:NSInvalidArgumentException format:@"The `name` cannot be blank."];
-    TKState *state = [TKState new];
+    TKState *state = [self new];
     state.name = name;
     return state;
 }
