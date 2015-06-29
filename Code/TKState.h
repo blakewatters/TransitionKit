@@ -32,7 +32,16 @@
 ///-----------------------
 
 /**
- Creates and returns a new state object with the specified name.
+ Creates and returns a new state object with the specified name and an optional userInfo dictionary.
+ 
+ @param name The name of the state. Cannot be blank.
+ @param userInfo An optional dictionary of user info.
+ @return A newly created state object with the specified name.
+ */
++ (instancetype)stateWithName:(NSString *)name userInfo:(NSDictionary *)userInfo;
+
+/**
+ Creates and returns a new state object with the specified name. This method uses stateWithName:userInfo: with nil as userInfo parameter.
  
  @param name The name of the state. Cannot be blank.
  @return A newly created state object with the specified name.
@@ -47,6 +56,11 @@
  The name of the receiver. Cannot be `nil` and must be unique within the state machine that the receiver is added to.
  */
 @property (nonatomic, copy, readonly) NSString *name;
+
+/**
+ An optional dictionary of user info.
+ */
+@property (nonatomic, copy, readonly) NSDictionary *userInfo;
 
 ///----------------------------------
 /// @name Configuring Block Callbacks
