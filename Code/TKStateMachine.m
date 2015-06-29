@@ -91,13 +91,6 @@ static NSString *TKQuoteString(NSString *string)
     return self;
 }
 
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"<%@:%p %ld States, %ld Events. currentState=%@, initialState='%@', isActive=%@>",
-            NSStringFromClass([self class]), self, (unsigned long) [self.mutableStates count], (unsigned long) [self.mutableEvents count],
-            TKQuoteString(self.currentState.name), self.initialState.name, self.isActive ? @"YES" : @"NO"];
-}
-
 - (void)setInitialState:(TKState *)initialState
 {
     TKRaiseIfActive();
@@ -312,6 +305,33 @@ static NSString *TKQuoteString(NSString *string)
         [copiedStateMachine addEvent:copiedEvent];
     }
     return copiedStateMachine;
+}
+
+#pragma mark - Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@:%p %ld States, %ld Events. currentState=%@, initialState='%@', isActive=%@>",
+            NSStringFromClass([self class]), self, (unsigned long) [self.mutableStates count], (unsigned long) [self.mutableEvents count],
+            TKQuoteString(self.currentState.name), self.initialState.name, self.isActive ? @"YES" : @"NO"];
+}
+
+- (NSString *)dotDescription
+{
+    NSMutableString *dotDescription = [[NSMutableString alloc] initWithString:@"digraph StateMachine {\n"];
+    if (self.initialState) {
+        [dotDescription appendFormat:@"  \"\" [style=\"invis\"]; \"\" -> \"%@\" [dir=both, arrowtail=dot]; // Initial State\n", self.initialState.name];
+    }
+    if (self.currentState) {
+        [dotDescription appendFormat:@"  \"%@\" [style=bold]; // Current State\n", self.currentState.name];
+    }
+    for (TKEvent *event in self.events) {
+        for (TKState *sourceState in event.sourceStates) {
+            [dotDescription appendFormat:@"  \"%@\" -> \"%@\" [label=\"%@\", fontname=\"Menlo Italic\", fontsize=9];\n", sourceState.name, event.destinationState.name, event.name];
+        }
+    }
+    [dotDescription appendString:@"}"];
+    return [dotDescription copy];
 }
 
 @end

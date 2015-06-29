@@ -200,6 +200,17 @@
  */
 - (BOOL)fireEvent:(id)eventOrEventName userInfo:(NSDictionary *)userInfo error:(NSError **)error;
 
+///------------------
+/// @name Description
+///------------------
+
+/**
+ A description of the state machine in the DOT graph description language.
+ 
+ @see http://en.wikipedia.org/wiki/DOT_(graph_description_language)
+ */
+@property (readonly) NSString *dotDescription;
+
 @end
 
 ///----------------
