@@ -32,11 +32,11 @@
 ///----------------------------
 
 /**
- Creates and returns a new transition object describing a state change occuring within a state machine in response to the firing of an event.
+ Creates and returns a new transition object describing a state change occurring within a state machine in response to the firing of an event.
 
  @param event The event being fired that is causing the transition to occur.
  @param sourceState The state of the machine when the event was fired.
- @param stateMachine The state machine in which the transition is occurirng.
+ @param stateMachine The state machine in which the transition is occurring.
  @param userInfo An optional dictionary of user info supplied with the event when it was fired.
  */
 + (instancetype)transitionForEvent:(TKEvent *)event fromState:(TKState *)sourceState inStateMachine:(TKStateMachine *)stateMachine userInfo:(NSDictionary *)userInfo;
